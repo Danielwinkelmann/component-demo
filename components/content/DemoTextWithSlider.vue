@@ -16,7 +16,7 @@ function sanitizeHtml(html: string) {
 
 <template>
   <div
-    class="m-8 flex h-fit w-4/5 flex-col-reverse gap-4 rounded-3xl bg-white px-8 py-10 md:flex-row"
+    class="m-8 flex h-fit w-4/5 flex-col-reverse gap-4 rounded-3xl bg-white px-8 py-10 md:flex-row mx-auto"
   >
     <div
       class="w-full p-4 md:w-1/2 flex flex-col justify-center"

@@ -33,12 +33,17 @@ const demoData: DemoTextWithSliderProps = {
 
 <template>
   <div class=" flex justify-center items-start bg-gray-100">
-    <div class="container min-h-screen flex justify-center items-start">
+    <div class="container min-h-screen flex flex-col justify-center items-start">
       <content-demo-text-with-slider
         :headline="demoData.headline"
         :paragraph="demoData.paragraph"
         :slides="demoData.slides"
         :slider-timeout="demoData.sliderTimeout"
+      />
+      <content-demo-text-with-slider
+        v-bind="demoData"
+        :slides="[...demoData.slides, ...demoData.slides]"
+        :slider-timeout="4000"
       />
     </div>
   </div>

@@ -28,6 +28,7 @@ function slideStyle(slideIndex: number) {
     transform: `translateX(${isActive ? '0%' : isNext ? '100%' : '-100%'})`,
     opacity: isActive ? 1 : 0,
     zIndex: isActive ? 10 : isNext ? 5 : 1,
+    '--color': props.slides[slideIndex].color,
   }
 }
 
@@ -37,7 +38,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="overflow-hidden">
+  <div  class="overflow-hidden">
     <div class="relative aspect-[6/7]">
       <div
         v-for="(slide, slideIndex) in slides"
@@ -51,15 +52,13 @@ onMounted(() => {
           :src="(slide.imageUrl).toString()"
         >
         <div
-          class="absolute -top-6 left-0 rounded-full px-5 py-3 text-sm text-white transition duration-1000"
+          class="absolute -top-6 left-0 rounded-full px-5 py-3 text-sm text-white bg-[--color] transition duration-1000"
           :class="{ 'translate-x-10': slideIndex !== currentSlideIndex }"
-          :style="{ backgroundColor: slide.color }"
           v-text="slide.badgeText"
         />
         <div
-          class="absolute right-0 bottom-6 w-4/5 rounded-3xl px-5 py-3 text-white transition duration-1000"
+          class="absolute right-0 bottom-6 w-4/5 rounded-3xl px-5 py-3 text-white bg-[--color] transition duration-1000"
           :class="{ 'translate-x-6': slideIndex !== currentSlideIndex }"
-          :style="{ backgroundColor: slide.color }"
         >
           <div
             class="mb-3 text-lg"
@@ -77,7 +76,7 @@ onMounted(() => {
               :key="slideIndicator.title"
               class="h-px grow bg-white/30"
             >
-              <div v-if="indicatorIndex === currentSlideIndex" class="h-px bg-white active-indicator" />
+              <div v-show="indicatorIndex === currentSlideIndex" class="h-px bg-white active-indicator" />
             </div>
           </div>
         </div>
