@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { DemoComponentProps } from '~/components/DemoComponent.vue'
+import type { DemoTextWithSliderProps } from '~/components/content/DemoTextWithSlider.vue'
 
-const demoData: DemoComponentProps = {
+const demoData: DemoTextWithSliderProps = {
   headline: 'Hello World',
   paragraph: 'Excepteur laboris ut dolor sunt cillum ea tempor. Proident cillum anim id culpa et culpa labore dolor nostrud irure do veniam consectetur sint eiusmod. Amet anim nisi nostrud excepteur pariatur aliqua. Incididunt aliqua ipsum enim consequat proident. Enim voluptate aliqua cupidatat exercitation elit consequat veniam ut. Enim mollit in magna excepteur reprehenderit commodo aute cupidatat aliquip ad fugiat ullamco amet. Deserunt qui elit dolore magna qui.',
   sliderTimeout: 5000,
@@ -34,7 +34,7 @@ const demoData: DemoComponentProps = {
 <template>
   <div class=" flex justify-center items-start bg-gray-100">
     <div class="container min-h-screen flex justify-center items-start">
-      <demo-component
+      <content-demo-text-with-slider
         :headline="demoData.headline"
         :paragraph="demoData.paragraph"
         :slides="demoData.slides"
